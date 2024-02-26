@@ -1,0 +1,68 @@
+.d // Displays
+  &-flex
+    display: flex
+
+.align // Alignments
+  &-center
+    align-items: center
+
+.justify  // Justifies
+  &-center
+    justify-content: center
+  &-space-around
+    justify-content: space-around
+  &-end
+    justify-content: flex-end
+  &-space-between
+    justify-content: space-between
+
+.flex
+  &-row
+    flex-direction: row
+  &-column
+    flex-direction: column
+  &-wrap
+    flex-wrap: wrap
+
+
+$cycle-step: 4
+@for $i from 0 through 100
+  // Margins
+  .ma-#{$i}
+    margin: #{$i * $cycle-step}px
+  .ml-#{$i}
+    margin-left: #{$i * $cycle-step}px
+  .mr-#{$i}
+    margin-right: #{$i * $cycle-step}px
+  .mx-#{$i}
+    margin-left: #{$i * $cycle-step}px
+    margin-right: #{$i * $cycle-step}px
+  .mt-#{$i}
+    margin-top: #{$i * $cycle-step}px
+  .mb-#{$i}
+    margin-bottom: #{$i * $cycle-step}px
+  .my-#{$i}
+    margin-top: #{$i * $cycle-step}px
+    margin-bottom: #{$i * $cycle-step}px
+  // Padding
+  .pa-#{$i}
+    padding: #{$i * $cycle-step}px
+  .pl-#{$i}
+    padding-left: #{$i * $cycle-step}px
+  .pr-#{$i}
+    padding-right: #{$i * $cycle-step}px
+  .px-#{$i}
+    padding-left: #{$i * $cycle-step}px
+    padding-right: #{$i * $cycle-step}px
+  .pt-#{$i}
+    padding-top: #{$i * $cycle-step}px
+  .pb-#{$i}
+    padding-bottom: #{$i * $cycle-step}px
+  .py-#{$i}
+    padding-top: #{$i * $cycle-step}px
+    padding-bottom: #{$i * $cycle-step}px
+
+.ml-auto
+  margin-left: auto
+.mr-auto
+  margin-right: auto

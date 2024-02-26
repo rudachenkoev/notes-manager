@@ -1,0 +1,16 @@
+.container
+  margin: 0 auto
+  padding: 16px 24px
+  @media only screen and (min-width: 1520px)
+    max-width: 1520px
+
+$column-gap: 16px
+.row
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  @for $i from 1 through 12
+    .col-#{$i}
+      padding: $column-gap
+      box-sizing: border-box
+      width: calc((100% * $i) / 12)
