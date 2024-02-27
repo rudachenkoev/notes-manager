@@ -39,6 +39,7 @@ export default {
       }
     },
     autocompleteFilter () {
+      // Fill the filter fields with the applied values
       const parseNumericalString = value => !isNaN(value) ? Number(value) : value // Check if string value is number
       const query = { ...this.$route.query }
       Object.keys(query).map(key => query[key] = parseNumericalString(query[key]))

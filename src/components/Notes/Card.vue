@@ -9,7 +9,7 @@ export default {
     DropdownMenu
   },
   props: {
-    note: { type: Object, required: true }
+    note: { type: Object, default: {}, required: true }
   },
   data () {
     return {

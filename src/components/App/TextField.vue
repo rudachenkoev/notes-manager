@@ -16,9 +16,9 @@ export default {
 </script>
 
 <template>
-  <div class="text-field">
-    <div v-if="label" class="text-field__label">{{ label }}:</div>
-    <div class="text-field__input">
+  <div class="custom-input">
+    <div v-if="label" class="custom-input__label">{{ label }}:</div>
+    <div class="custom-input__input">
       <input
         :value="modelValue"
         :placeholder="placeholder || label"
@@ -27,13 +27,13 @@ export default {
       <img
         v-if="appendInnerIcon"
         :src="appendInnerIcon"
-        class="text-field__append-inner-icon"
+        class="custom-input__append-inner-icon"
         width="16"
         height="16"
         alt="append-inner-icon"
       />
     </div>
-    <div :key="error.$uid" v-for="error of errorMessages" class="text-field__errors">
+    <div :key="error.$uid" v-for="error of errorMessages" class="custom-input__errors">
       <div class="error-msg">{{ error.$message }}</div>
     </div>
   </div>

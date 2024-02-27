@@ -51,7 +51,7 @@ export default {
     },
 
     open (note = null) {
-      // Prefill fields for editing a note or set a initial object
+      // Prefill fields for editing a note or set an initial object
       this.body = note
         ? Object.keys(this.body).reduce((t, k) => ({ ...t, [k]: note[k] }), {})
         : this.setInitialBodyState()
@@ -74,6 +74,7 @@ export default {
 
     onClear () {
       this.body = this.setInitialBodyState()
+      this.v$.$reset()
     }
   }
 }

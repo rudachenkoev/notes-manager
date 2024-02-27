@@ -57,7 +57,7 @@ export default {
         </div>
       </div>
     </div>
-    <div :key="error.$uid" v-for="error of errorMessages" class="text-field__errors">
+    <div :key="error.$uid" v-for="error of errorMessages" class="custom-select__errors">
       <div class="error-msg">{{ error.$message }}</div>
     </div>
   </div>

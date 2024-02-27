@@ -2,7 +2,7 @@
 export default {
   name: 'Dropdown',
   props: {
-    actions: { type: Array, required: true }
+    actions: { type: Array, default: [], required: true }
   },
   data () {
     return {
