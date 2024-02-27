@@ -80,10 +80,7 @@ export default {
       let items = state.items
       const { category, isFavourite } = router.currentRoute.value.query
       if (category) items = items.filter(item => item.category === +category)
-      if (isFavourite) {
-        const isFav = isFavourite === 'true'
-        items = items.filter(item => isFav ? state.favourites.includes(item.id) : !state.favourites.includes(item.id))
-      }
+      if (isFavourite && isFavourite === 'true') items = items.filter(item => state.favourites.includes(item.id))
       return items
     }
   }

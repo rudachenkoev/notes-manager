@@ -8,7 +8,7 @@ export default {
       filter: this.setInitialFilters(),
       isFavouriteList: [
         { value: 'true', name: 'Only favourites' },
-        { value: 'false', name: 'Only not favourites' }
+        { value: 'false', name: 'All' }
       ]
     }
   },
@@ -35,7 +35,7 @@ export default {
     setInitialFilters () {
       return {
         category: null,
-        isFavourite: null
+        isFavourite: 'false'
       }
     },
     autocompleteFilter () {
