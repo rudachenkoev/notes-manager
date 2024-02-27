@@ -13,7 +13,11 @@ export default {
     <div class="modal">
       <div class="modal-title">
         <slot name="title">{{ title }}</slot>
-        <i class="fa-solid fa-xmark" @click="$emit('update:modelValue', false)"/>
+        <AppButton
+          variant="flat"
+          icon="fa-solid fa-xmark"
+          @click="$emit('update:modelValue', false)"
+        />
       </div>
       <div class="modal-content">
         <slot name="content" />

@@ -46,19 +46,18 @@ export default {
       <div>
         Total amount: <span class="fw-700">{{ notes.length }}</span>
       </div>
-      <button @click="handleFormDialogOpening()">Create note</button>
+      <AppButton label="Create note" @click="handleFormDialogOpening()"/>
     </div>
 
     <div class="row mt-3">
-      <NotesCard
-        :key="note.id"
-        v-for="note in notes"
-        :note="note"
-        class="col-3"
-        @handleFormDialogOpening="handleFormDialogOpening(note)"
-        @handleDeleting="handleDeleting(note)"
-        @handleFavouriteState="handleFavouriteState(note)"
-      />
+      <div :key="note.id" v-for="note in notes" class="col-3">
+        <NotesCard
+          :note="note"
+          @handleFormDialogOpening="handleFormDialogOpening(note)"
+          @handleDeleting="handleDeleting(note)"
+          @handleFavouriteState="handleFavouriteState(note)"
+        />
+      </div>
     </div>
   </div>
 

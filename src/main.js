@@ -3,8 +3,15 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/assets/sass/index.sass'
+import AppTextField from '@/components/App/TextField.vue'
+import AppSelect from '@/components/App/Select.vue'
+import AppButton from '@components/App/Button.vue'
 
 const app = createApp(App)
+
+app.component('AppTextField', AppTextField)
+app.component('AppSelect', AppSelect)
+app.component('AppButton', AppButton)
 
 app.use(router)
 app.use(store)

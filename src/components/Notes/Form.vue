@@ -1,16 +1,13 @@
 <script>
 import DialogWindow from '@/components/DialogWindow.vue'
-import AppTextField from '@/components/App/TextField.vue'
-import AppSelect from '@/components/App/Select.vue'
 import { mapState, mapActions } from 'vuex'
 import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
+
 export default {
   name: 'Form',
   components: {
-    DialogWindow,
-    AppTextField,
-    AppSelect
+    DialogWindow
   },
   data () {
     return {
@@ -108,8 +105,8 @@ export default {
       />
     </template>
     <template #actions>
-      <button @click="onClear">Clear</button>
-      <button @click="onSubmit">Save</button>
+      <AppButton label="Clear" variant="outlined" @click="onClear()"/>
+      <AppButton label="Save" class="ml-3" @click="onSubmit()"/>
     </template>
   </DialogWindow>
 </template>

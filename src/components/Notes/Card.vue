@@ -31,8 +31,10 @@ export default {
   <div class="d-flex align-start justify-space-between">
     <div class="card-title">{{ note.name }}</div>
     <div class="d-flex align-center">
-      <i
-        :class="`fa-${isFavouriteNote(note.id) ? 'solid' : 'regular'} fa-heart mr-4`"
+      <AppButton
+        variant="flat"
+        :icon="`fa-${isFavouriteNote(note.id) ? 'solid' : 'regular'} fa-heart`"
+        class="mr-4"
         @click="$emit('handleFavouriteState')"
       />
       <DropdownMenu :actions="actionsList" />

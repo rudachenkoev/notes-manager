@@ -19,7 +19,7 @@ export default {
 
 <template>
   <div class="dropdown" @click="toggleDropdown">
-    <i class="fa-solid fa-ellipsis-vertical"/>
+    <AppButton variant="flat" icon="fa-solid fa-ellipsis-vertical" />
     <ul v-if="isDropdownOpen" class="dropdown-menu">
       <li
         :key="`action-${index}`"
