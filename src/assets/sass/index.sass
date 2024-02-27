@@ -1,10 +1,11 @@
+@import 'variables'
+
 html, body
   margin: 0
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
   line-height: 1.5
   font-weight: 400
-  background-color: #FAFAFA
-  color-scheme: light dark
+  background-color: $white_100
   color: #1a1a1a
   font-synthesis: none
   text-rendering: optimizeLegibility
@@ -14,8 +15,43 @@ html, body
 a
   text-decoration: inherit
 
+.card
+  height: fit-content
+  padding: 12px
+  background-color: $white_50
+  border-radius: 8px
+  border: 1px solid $white_400
+  &-title
+    font-size: 20px
+    font-weight: 500
+  &-option
+    font-size: 11px
+    color: $white_300
+
+
+.options
+  position: absolute
+  top: 100%
+  font-size: 12px
+  border: 1px solid $white_400
+  border-radius: 8px
+  background-color: $white_50
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+.option
+  padding: 4px 8px
+  cursor: pointer
+  &:hover
+    background-color: $white_100
+  &.selected
+    font-weight: 500
+    background-color: $white_200
+
 @import 'grid'
 @import 'spacing'
 @import 'fonts'
 
 @import 'navbar'
+@import 'dropdown'
+@import 'dialogWindow'
+@import './app/textField'
+@import './app/select'

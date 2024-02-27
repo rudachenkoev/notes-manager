@@ -1,0 +1,38 @@
+@import '@/assets/sass/_variables.sass'
+
+.custom-select
+  &__label, &__errors
+    font-size: 11px
+    padding: 0 4px
+  &__errors
+    .error-msg
+      color: $error_500
+  &__input
+    display: flex
+    align-items: center
+    height: 32px
+    padding: 4px 12px
+    border-radius: 8px
+    border: 1px solid $white_400
+    background-color: $white_50
+    position: relative
+    cursor: pointer
+    .activator
+      transition: transform ease-in-out 0.3s
+      &.rotated
+        transform: rotate(-180deg)
+    .selected-option
+      display: flex
+      align-items: center
+      width: 100%
+      height: inherit
+      font-size: 12px
+      &__placeholder
+        font-size: 12px
+        color: $white_300
+    .options-list
+      @extend .options
+      left: 0
+      width: 100%
+      max-height: 200px
+      overflow-y: auto
