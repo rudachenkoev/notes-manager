@@ -2,14 +2,16 @@
 import { mapActions, mapGetters, mapState } from 'vuex'
 import NotesForm from '@/components/Notes/Form.vue'
 import NotesCard from '@/components/Notes/Card.vue'
+import NotesFilter from '@/components/Notes/Filter.vue'
 export default {
   name: 'Notes',
   components: {
     NotesForm,
-    NotesCard
+    NotesCard,
+    NotesFilter
   },
   computed: {
-    ...mapGetters(['isFavouriteNote']),
+    ...mapGetters(['isFavouriteNote', 'getFilteredNotes']),
     ...mapState({
       notes: state => state.notes.items
     })
@@ -42,15 +44,17 @@ export default {
 
 <template>
   <div class="container">
-    <div class="d-flex justify-space-between align-center">
-      <div>
-        Total amount: <span class="fw-700">{{ notes.length }}</span>
-      </div>
+    <div class="d-flex justify-space-between align-end">
+      <NotesFilter/>
       <AppButton label="Create note" @click="handleFormDialogOpening()"/>
     </div>
 
-    <div class="row mt-3">
-      <div :key="note.id" v-for="note in notes" class="col-3">
+    <div class="my-4">
+      Total amount: <span class="fw-700">{{ getFilteredNotes().length }}</span>
+    </div>
+
+    <div class="row">
+      <div :key="note.id" v-for="note in getFilteredNotes()" class="col-3">
         <NotesCard
           :note="note"
           @handleFormDialogOpening="handleFormDialogOpening(note)"

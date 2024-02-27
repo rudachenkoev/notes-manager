@@ -4,7 +4,7 @@ export default {
     modelValue: { type: [String, Number] },
     label: { type: String, default: '' },
     placeholder: { type: String, default: '' },
-    items: { type: Array, required: true },
+    items: { type: Array, default: [], required: true },
     itemValue: { type: String, default: 'id' },
     itemLabel: { type: String, default: 'name' },
     errorMessages: { type: Array, default: [] }
@@ -23,7 +23,7 @@ export default {
     toggleSelect () {
       this.isOpenOptions = !this.isOpenOptions
     },
-    selectOption (option) {
+    handleSelect (option) {
       this.$emit('update:modelValue', option[this.itemValue])
       this.isOpenOptions = false
     }
@@ -51,7 +51,7 @@ export default {
           v-for="(option, index) in items"
           :key="index"
           :class="['option', modelValue === option[itemValue] && 'selected']"
-          @click="selectOption(option)"
+          @click="handleSelect(option)"
         >
           {{ option[itemLabel] }}
         </div>

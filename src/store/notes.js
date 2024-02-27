@@ -1,3 +1,5 @@
+import router from '@/router'
+
 export default {
   state: () => ({
     items: [],
@@ -73,6 +75,16 @@ export default {
   },
   getters: {
     getCategoryById: state => id => state.categories.find(item => item.id === id),
-    isFavouriteNote: state => id => state.favourites.some(noteId => noteId === id)
+    isFavouriteNote: state => id => state.favourites.some(noteId => noteId === id),
+    getFilteredNotes: state => () => {
+      let items = state.items
+      const { category, isFavourite } = router.currentRoute.value.query
+      if (category) items = items.filter(item => item.category === +category)
+      if (isFavourite) {
+        const isFav = isFavourite === 'true'
+        items = items.filter(item => isFav ? state.favourites.includes(item.id) : !state.favourites.includes(item.id))
+      }
+      return items
+    }
   }
 }
