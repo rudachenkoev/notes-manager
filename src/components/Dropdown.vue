@@ -12,13 +12,16 @@ export default {
   methods: {
     toggleDropdown () {
       this.isDropdownOpen = !this.isDropdownOpen
+    },
+    closeDropdown () {
+      this.isDropdownOpen = false
     }
   }
 }
 </script>
 
 <template>
-  <div class="dropdown" @click="toggleDropdown">
+  <div class="dropdown" v-click-outside="closeDropdown" @click="toggleDropdown">
     <AppButton variant="flat" icon="fa-solid fa-ellipsis-vertical" />
     <ul v-if="isDropdownOpen" class="dropdown-menu">
       <li

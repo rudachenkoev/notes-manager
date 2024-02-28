@@ -46,7 +46,7 @@ export default {
   <div class="container">
     <div class="d-flex justify-space-between align-end">
       <NotesFilter/>
-      <AppButton label="Create note" @click="handleFormDialogOpening()"/>
+      <AppButton label="Create note" @click.stop="handleFormDialogOpening()"/>
     </div>
 
     <div class="my-4">

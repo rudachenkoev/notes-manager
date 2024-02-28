@@ -26,6 +26,9 @@ export default {
     handleSelect (option) {
       this.$emit('update:modelValue', option[this.itemValue])
       this.isOpenOptions = false
+    },
+    closeOptions () {
+      this.isOpenOptions = false
     }
   }
 }
@@ -34,7 +37,7 @@ export default {
 <template>
   <div>
     <div v-if="label" class="custom-select__label">{{ label }}:</div>
-    <div class="custom-select__input">
+    <div class="custom-select__input" v-click-outside="closeOptions">
       <div class="selected-option" @click="toggleSelect">
         <span v-if="!selectedValueObj" class="selected-option__placeholder">
           {{ placeholder || label }}
