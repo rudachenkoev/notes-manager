@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    modelValue: { type: [String, Number] },
+    modelValue: { type: [String, Number, Boolean] },
     label: { type: String, default: '' },
     placeholder: { type: String, default: '' },
     items: { type: Array, default: [], required: true },

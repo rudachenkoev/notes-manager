@@ -7,8 +7,8 @@ export default {
     return {
       filter: this.setInitialFilters(),
       isFavouriteList: [
-        { value: 'true', name: 'Only favourites' },
-        { value: 'false', name: 'All' }
+        { value: true, name: 'Only favourites' },
+        { value: false, name: 'All' }
       ]
     }
   },
@@ -35,7 +35,7 @@ export default {
     setInitialFilters () {
       return {
         category: null,
-        isFavourite: 'false'
+        isFavourite: false
       }
     },
     autocompleteFilter () {
@@ -65,7 +65,7 @@ export default {
       :items="isFavouriteList"
       item-value="value"
       class="mw-200 w-100 ml-3"
-      label="Favourites"
+      label="Tags"
     />
     <AppButton label="Clear filters" class="ml-3" @click="onClear()"/>
   </div>
