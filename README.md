@@ -1,7 +1,13 @@
-# Vue 3 + Vite
+# Notes manager
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+**Stack:** Vue.js (Options API), Javascript, Vite, Vuex, Vue Router.
 
-## Recommended IDE Setup
+Develop a Vue.js SPA for managing notes.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Expected functionality:
+
+1. basic CRUD functionality is implemented for notes;
+2. the essence of the note contains: title, content, category, date of creation, date of editing, the ability to add to favourites;
+3. categories have a preset of 2-3 categories of your choice;
+4. added the ability to save data to localStorage and restore the state after the page reloads;
+5. possibility of filtering.
