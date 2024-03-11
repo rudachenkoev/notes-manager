@@ -28,7 +28,7 @@ export default {
         :key="`action-${index}`"
         v-for="(action, index) in actions"
         class="dropdown-menu__item"
-        @click="action.onClick()"
+        @click.stop="action.onClick()"
       >
         {{ action.name }}
       </li>
